@@ -1,0 +1,4 @@
+node_modules/
+tests/preview*.png
+studieplan-sikkerhetskopi-*.json
+.DS_Store

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4ef">
+    <meta name="description" content="En enkel studieplan for høsten 2026 med undervisning, pensum og frister.">
+    <title>Min studieplan · Høst 2026</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#ukeplan">Hopp til ukeplanen</a>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <div><strong>Min studieplan</strong><span>Høstsemesteret 2026</span></div>
+        </div>
+        <button class="text-button backup-trigger" type="button" id="backup-open">Sikkerhetskopi <span aria-hidden="true">↗</span></button>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">DITT OVERBLIKK</p>
+            <h1 id="hero-title">En uke av gangen.</h1>
+            <p>Se hva som kommer, finn lesningen til hver økt og hold fristene i sikte.</p>
+          </div>
+          <div class="hero-next" id="next-up" aria-live="polite"></div>
+        </section>
+
+        <div id="storage-notice" class="storage-notice" role="status" hidden></div>
+
+        <div class="section-top" id="ukeplan">
+          <div>
+            <p class="eyebrow">UNDERVISNING OG PENSUM</p>
+            <h2>Denne uka</h2>
+          </div>
+          <button type="button" class="today-button" id="today-button">Til denne uka</button>
+        </div>
+
+        <section class="planner" aria-label="Ukeplan">
+          <div class="planner-main">
+            <div class="week-toolbar">
+              <button type="button" class="arrow-button" id="previous-week" aria-label="Forrige uke">←</button>
+              <div class="week-label" aria-live="polite"><strong id="week-title"></strong><span id="week-dates"></span></div>
+              <button type="button" class="arrow-button" id="next-week" aria-label="Neste uke">→</button>
+            </div>
+            <div class="filters" id="filters" aria-label="Filtrer etter fag">
+              <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">Alle fag</button>
+              <button type="button" class="filter-chip" data-filter="ped3611" aria-pressed="false">PED 3611</button>
+              <button type="button" class="filter-chip" data-filter="ped3616" aria-pressed="false">PED 3616</button>
+              <button type="button" class="filter-chip" data-filter="plan2" aria-pressed="false">Plan II</button>
+            </div>
+            <div class="week-progress" id="week-progress" aria-live="polite"></div>
+            <div class="events" id="events"></div>
+          </div>
+
+          <aside class="planner-side">
+            <section class="side-card" aria-labelledby="deadlines-title">
+              <div class="side-heading"><span class="side-icon deadline-icon" aria-hidden="true">↗</span><h3 id="deadlines-title">Kommende frister</h3></div>
+              <div id="deadlines"></div>
+            </section>
+
+            <section class="side-card" aria-labelledby="tasks-title">
+              <div class="side-heading"><span class="side-icon task-icon" aria-hidden="true">✓</span><h3 id="tasks-title">Mine oppgaver</h3></div>
+              <p class="side-intro">Egne gjøremål for uka du ser på.</p>
+              <form id="task-form" class="task-form">
+                <label class="sr-only" for="task-input">Ny oppgave</label>
+                <input id="task-input" name="task" type="text" maxlength="160" placeholder="F.eks. les kapittel 7" required>
+                <button type="submit" aria-label="Legg til oppgave">+</button>
+              </form>
+              <div id="task-list" aria-live="polite"></div>
+            </section>
+          </aside>
+        </section>
+
+        <section class="about" aria-labelledby="about-title">
+          <div>
+            <p class="eyebrow">GREIT Å VITE</p>
+            <h2 id="about-title">Din plan, i din nettleser.</h2>
+          </div>
+          <div class="about-copy">
+            <p>«Klar» betyr at du selv har merket lesningen som gjort. Status og egne oppgaver lagres bare i denne nettleseren. Bruk <button type="button" class="inline-button" id="backup-open-inline">sikkerhetskopi</button> hvis du vil ta vare på dem eller flytte dem til en annen enhet.</p>
+            <p>Planene kan endres i Canvas. Oppføringer med uklare opplysninger er merket, slik at du vet hva som må sjekkes.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer"><span>Min studieplan · Høst 2026</span><span>Basert på de tre undervisningsplanene, sist gjennomgått 17. september 2026.</span></footer>
+    </div>
+
+    <dialog id="backup-dialog" aria-labelledby="backup-title">
+      <div class="dialog-head"><h2 id="backup-title">Sikkerhetskopi</h2><button type="button" id="backup-close" class="dialog-close" aria-label="Lukk">×</button></div>
+      <p>Last ned en fil med «Klar»-status og egne oppgaver. Filen inneholder ikke undervisningsplanen.</p>
+      <button type="button" class="primary-button" id="export-button">Last ned sikkerhetskopi</button>
+      <hr>
+      <h3>Hent inn en sikkerhetskopi</h3>
+      <p>Dette erstatter status og oppgaver som finnes i denne nettleseren nå.</p>
+      <label class="import-label" for="import-file">Velg JSON-fil</label>
+      <input id="import-file" type="file" accept="application/json,.json">
+      <p id="backup-message" class="backup-message" role="status"></p>
+    </dialog>
+  </body>
+</html>
