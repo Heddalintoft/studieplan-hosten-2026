@@ -31,11 +31,15 @@ Kildene som ble brukt 17. september 2026:
 
 Kildene kan endres. Sjekk Canvas for gjeldende tidspunkt, oppmøtested og levering. Appen merker blant annet manglende klokkeslett ved eksamen og frister, forskjeller i litteraturhenvisninger og skolebesøket der oppmøtested ikke står i planen. «Plan II» brukes som fagnavn fordi emnekode ikke er oppgitt.
 
+## På telefonen
+
+Åpne [studieplanleggeren](https://heddalintoft.github.io/studieplan-hosten-2026/) i telefonens nettleser. På iPhone bruker du Safari: Del → Legg til på Hjem-skjerm → Legg til. På Android bruker du Chrome: menyen ⋮ → Installer og opprett snarvei / Installer app. Appen kan brukes uten nett etter at den er åpnet én gang mens telefonen er på nett.
+
+Fremdrift og egne oppgaver fra PC-en følger ikke automatisk med. Åpne **Sikkerhetskopi** på PC-en og last ned JSON-filen. Send filen til telefonen uten å legge den på GitHub. Åpne **Sikkerhetskopi** i telefonappen og velg filen for å hente inn fremdriften.
+
 ## GitHub og publisering
 
-Koden ligger også i det private GitHub-arkivet [Heddalintoft/studieplan-hosten-2026](https://github.com/Heddalintoft/studieplan-hosten-2026). Appen er ikke publisert som nettside ennå. GitHub Free krever et offentlig kodearkiv for Pages, og selve nettsiden blir offentlig tilgjengelig. Fremdrift og egne oppgaver lagres fortsatt bare i din nettleser; de legges ikke i kodearkivet. Ikke legg sikkerhetskopier eller personlige notater i kodearkivet.
-
-Når offentlig publisering er godkjent, kan Codex slå på GitHub Pages. Du trenger ikke gjøre dette manuelt.
+Koden og undervisningsplanen ligger i det offentlige GitHub-arkivet [Heddalintoft/studieplan-hosten-2026](https://github.com/Heddalintoft/studieplan-hosten-2026). Nettsiden kan åpnes av alle som har lenken. Fremdrift og egne oppgaver lagres bare i nettleseren på din enhet; de legges ikke i kodearkivet. Ikke legg sikkerhetskopier eller personlige notater i kodearkivet.
 
 ## For videre vedlikehold
 
