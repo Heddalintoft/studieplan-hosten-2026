@@ -33,9 +33,9 @@ Kildene kan endres. Sjekk Canvas for gjeldende tidspunkt, oppmøtested og leveri
 
 ## GitHub og publisering
 
-Appen er foreløpig bare i denne mappen. For gratis GitHub Pages trenger du en GitHub-konto med bekreftet e-post. GitHub Free krever et offentlig kodearkiv for Pages, og selve nettsiden blir offentlig tilgjengelig. Fremdrift og egne oppgaver lagres fortsatt bare i din nettleser; de legges ikke i kodearkivet. Ikke legg sikkerhetskopier eller personlige notater i kodearkivet.
+Koden ligger også i det private GitHub-arkivet [Heddalintoft/studieplan-hosten-2026](https://github.com/Heddalintoft/studieplan-hosten-2026). Appen er ikke publisert som nettside ennå. GitHub Free krever et offentlig kodearkiv for Pages, og selve nettsiden blir offentlig tilgjengelig. Fremdrift og egne oppgaver lagres fortsatt bare i din nettleser; de legges ikke i kodearkivet. Ikke legg sikkerhetskopier eller personlige notater i kodearkivet.
 
-Når kontoen er klar og offentlig publisering er godkjent, kan Codex opprette kodearkivet og slå på GitHub Pages. Du trenger ikke gjøre dette manuelt.
+Når offentlig publisering er godkjent, kan Codex slå på GitHub Pages. Du trenger ikke gjøre dette manuelt.
 
 ## For videre vedlikehold
 
