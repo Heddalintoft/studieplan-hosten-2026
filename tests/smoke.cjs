@@ -12,7 +12,7 @@ const server = http.createServer((request, response) => {
     response.writeHead(403).end();
     return;
   }
-  const type = file.endsWith(".js") ? "text/javascript" : file.endsWith(".css") ? "text/css" : file.endsWith(".svg") ? "image/svg+xml" : "text/html";
+  const type = file.endsWith(".js") ? "text/javascript" : file.endsWith(".css") ? "text/css" : file.endsWith(".svg") ? "image/svg+xml" : file.endsWith(".png") ? "image/png" : file.endsWith(".webmanifest") ? "application/manifest+json" : "text/html";
   try { response.writeHead(200, { "Content-Type": `${type}; charset=utf-8` }).end(fs.readFileSync(file)); }
   catch { response.writeHead(404).end(); }
 });
@@ -83,6 +83,15 @@ async function main() {
   await page.locator('[data-filter="ped3616"]').click();
   assert.equal(await page.locator(".event-card").count(), 2);
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
+  assert.equal(await page.evaluate(async () => {
+    const manifest = await fetch("./manifest.webmanifest").then(response => response.json());
+    return manifest.display === "standalone" && manifest.icons.length === 2;
+  }), true);
+  await page.waitForFunction(() => !!navigator.serviceWorker.controller);
+  await context.setOffline(true);
+  await page.reload();
+  assert.equal(await page.locator("#week-title").textContent(), "Uke 38");
+  await context.setOffline(false);
   assert.deepEqual(errors, []);
   if (process.env.STUDY_SCREENSHOT) {
     await page.locator('[data-filter="all"]').click();
@@ -96,7 +105,7 @@ async function main() {
   await localPage.getByRole("button", { name: "Merk som klar" }).first().click();
   await localPage.reload();
   assert.match(await localPage.locator("#week-progress").textContent(), /1 av 4/);
-  console.log("Smoke test passed: week view, shared event, progress, tasks, backup export/import, navigation, filter and mobile width.");
+  console.log("Smoke test passed: planner, backup, mobile view, manifest and offline reload.");
   await browser.close();
 }
 
